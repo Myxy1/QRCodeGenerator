@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try {
-                    BitMatrix bitMatrix = multiFormatWriter.encode("text2Qr", BarcodeFormat.QR_CODE, 200, 200);
+                    BitMatrix bitMatrix = multiFormatWriter.encode(text.getText().toString(), BarcodeFormat.QR_CODE, 200, 200);
                     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                     Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                     imageView.setImageBitmap(bitmap);
